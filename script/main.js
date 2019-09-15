@@ -40,6 +40,23 @@ const API = {
         return fetch(`http://localhost:8088/donuts/${id}`, {
             method: "DELETE"
             }).then(response => response.json())
+    },
+
+    editDonut: (id) => {
+        const donutUpdateObject = {
+            name: document.querySelector("#donutName").value
+        }
+        return fetch(`http://localhost:8088/donuts/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(donutUpdateObject)
+        }).then(response => response.json())
+    },
+    getSingle: (donutId) => {
+       return fetch(`http://localhost:8088/donuts/${donutId}`)
+            .then(response => response.json())
     }
 
 }
@@ -196,7 +213,21 @@ const resultsContainer = document.querySelector("#donut-results").addEventListen
                 })
             })
     }
+    else if (event.target.id.startsWith("editDonut")) {
+        editForm(event.target.id.split("--")[1])
+    }
 })
+
+const editForm = (donutId) => {
+    const hiddenDonutId = document.querySelector("#donutId")
+    const editDonutName = document.querySelector("#donutName")
+
+    API.getSingle(donutId)
+    .then(response => {
+        hiddenDonutId.value = donutId;
+        editDonutName.value = response.name;
+    })
+}
 
 
 
