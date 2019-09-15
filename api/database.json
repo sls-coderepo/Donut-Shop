@@ -6,23 +6,15 @@
       "flavor": "chocolate",
       "glaze": "chocolate",
       "topping": "rainbow sprinkles",
-      "id": 5
-    },
-    {
-      "name": "",
-      "type": "yeast",
-      "flavor": "chocolate",
-      "glaze": "chocolate",
-      "topping": "rainbow sprinkles",
-      "id": 6
-    },
-    {
-      "name": "",
-      "type": "yeast",
-      "flavor": "chocolate",
-      "glaze": "chocolate",
-      "topping": "rainbow sprinkles",
       "id": 7
+    },
+    {
+      "name": "",
+      "type": "yeast",
+      "flavor": "chocolate",
+      "glaze": "chocolate",
+      "topping": "rainbow sprinkles",
+      "id": 8
     }
   ],
   "types": [
